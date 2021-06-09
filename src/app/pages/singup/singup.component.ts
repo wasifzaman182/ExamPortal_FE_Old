@@ -9,7 +9,21 @@ export class SingupComponent implements OnInit {
 
   constructor() { }
 
+  public user={
+    username:'',
+    password:'',
+    firstname:'',
+    lastname:'',
+    email:'',
+    phone:'',
+  };
+
   ngOnInit(): void {
+  }
+
+  formSubmit(){
+    alert("Form is submited");
+    console.log(this.user);
   }
 
 }
