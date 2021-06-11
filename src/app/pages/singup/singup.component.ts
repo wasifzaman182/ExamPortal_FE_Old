@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-singup',
@@ -8,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class SingupComponent implements OnInit {
 
-  constructor( private userService:UserService) { }
+  constructor( private userService:UserService, private snackBar:MatSnackBar) { }
 
   public user={
     username:'',
@@ -26,7 +28,10 @@ export class SingupComponent implements OnInit {
    // alert("Form is submited");
    // console.log(this.user);
     if(this.user.username == '' || this.user.username ==null){
-      alert("Please enter username");
+      //alert("Please enter username");
+      this.snackBar.open('UserName can not be empty ','',{
+        duration:300,
+      });
       return;
     }
 
@@ -36,7 +41,8 @@ export class SingupComponent implements OnInit {
       (data)=>{
         //show message on success
         console.log(data);
-        alert("data inserted successfully");
+        //alert("data inserted successfully");
+        Swal.fire('User Registered Successfully ', 'Done');
       },
       (error)=>{
         //show message on failur
