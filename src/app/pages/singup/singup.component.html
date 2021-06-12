@@ -1,13 +1,14 @@
 <div class="bootstrap-wrapper">
     <div class="container">
       <div class="container text-center" style="margin-top: 10px;">
-        <img style="height: 100px; width: 200px;" src="../../../assets/logo.png" alt="image not found">
+        
       </div>
       
-        <div class="row" style="margin: 20px;">
+       <div class="row" style="margin: 20px;"> 
             <div class="col-md-6 offset-md-3 ">
-                <div class="container">
-                    
+              <mat-card>
+                <div class="container text-center">
+                  <img style="height: 100px; width: 200px;" src="../../../assets/logo.png" alt="image not found">
                 </div>
                 <h1 class="text-center">Register here</h1>
                 <form (ngSubmit)="formSubmit()">
@@ -15,7 +16,7 @@
                     <!-- username -->
                      <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >User Name</mat-label>
-                        <input 
+                        <input required
                         
                         [(ngModel)]="user.username" name="username"
 
@@ -26,7 +27,7 @@
                       <!-- Password -->
                       <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >Password</mat-label>
-                        <input 
+                        <input required
                         
                         [(ngModel)]="user.password" name="password"
 
@@ -36,7 +37,7 @@
                       <!-- FirstName -->
                       <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >First Name</mat-label>
-                        <input 
+                        <input required
                         
                         [(ngModel)]="user.firstname" name="firstname"
 
@@ -46,7 +47,7 @@
                       <!-- LastName -->
                       <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >Last Name</mat-label>
-                        <input
+                        <input required
                         
                         [(ngModel)]="user.lastname" name="lastname"
 
@@ -56,7 +57,7 @@
                       <!-- Phone Number -->
                      <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >Phone Number</mat-label>
-                        <input 
+                        <input required
                         
                         [(ngModel)]="user.phone" name="phone"
 
@@ -66,7 +67,7 @@
                       <!-- Email -->
                      <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >Email</mat-label>
-                        <input 
+                        <input required
                         
                         [(ngModel)]="user.email" name="email"
 
@@ -80,6 +81,7 @@
                       </div>
 
                 </form>
+              </mat-card>
             </div>
         </div>
     </div>
