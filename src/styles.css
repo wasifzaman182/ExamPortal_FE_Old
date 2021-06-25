@@ -16,7 +16,7 @@ html, body {
     
 }
 
- /* for margin left right top and bottom */
+
 .ml20{
     margin-left: 20px;
 }
@@ -25,12 +25,12 @@ html, body {
 }
 .mt20{
     margin-top: 20px;
-}
+} 
 .mb20{
     margin-bottom: 20px;
 }
 
-/* for margin 10 left right top and bottom */
+
 .ml10{
     margin-left: 10px;
 }
