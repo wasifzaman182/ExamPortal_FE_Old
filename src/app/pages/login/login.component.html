@@ -15,12 +15,19 @@
                     <img style="height: 100px; width: 200px;" src="../../../assets/logo.png" alt="image not found">
                 </div>
                 <h1 class="text-center">Login here</h1>
-                <form action="">
+
+                <!-- {{loginData |json}} -->
+                <form (ngSubmit)="formSubmit()">
                     
                     <!-- username -->
                      <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >User Name</mat-label>
-                        <input required
+                        <input 
+                        
+                        [(ngModel)]="loginData.username"
+                        name="username"
+
+                        required
                         matInput placeholder="Enter here" />
                         <mat-hint>Valid UserName</mat-hint>
                       </mat-form-field>
@@ -28,7 +35,12 @@
                       <!-- Password -->
                       <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >Password</mat-label>
-                        <input required
+                        <input 
+                        
+                        [(ngModel)]="loginData.password"
+                        name="password"
+
+                        required
                         type="password"  matInput placeholder="Enter here" />
                       </mat-form-field>
 
