@@ -44,10 +44,21 @@ export class LoginComponent implements OnInit {
       (data:any)=>{
         console.log("Success");
         console.log(data);
+
+        //logging the current user
+        this.login.loginUser(data.token);
+
+        this.login.getCurrentUser().subscribe(
+          (user:any)=>{
+
+          this.login.setUser(user);
+          console.log(user);
+          });
+
       },
       (error)=>{
         console.log('Failed');
-        console.log(error);
+        console.log(error); 
       }
     );
   }
