@@ -9,6 +9,10 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
+ //method which will return current user details 
+  public getCurrentUser(){
+    return this.http.get(`${baseUrl}/current-user`);
+  }
 
   //method to generate token
   public generateToken(loginData:any){
@@ -18,7 +22,7 @@ export class LoginService {
 
   //generated token save into local storage
 
-  public loginToken(token){
+  public loginUser(token){
     localStorage.setItem('token', token);
     return true;
   }
@@ -67,5 +71,6 @@ export class LoginService {
     return userRole.authorities[0].authority;
   }
 
-  
+    
+
 }
