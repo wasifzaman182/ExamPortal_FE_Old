@@ -55,10 +55,26 @@ export class LoginComponent implements OnInit {
           console.log(user);
           });
 
+          //redirecting accordinly to user role
+          if(this.login.getUserRole()=='ADMIN'){
+
+            window.location.href='/admin-dashboard';
+
+          }
+          else if(this.login.getUserRole() =='NORMAL'){
+
+            window.location.href='/user-dashboard';
+          }else{
+            this.login.logOut();
+          }
+
       },
       (error)=>{
         console.log('Failed');
         console.log(error); 
+        this.snackBar.open('Invalid Details!!', '',{
+          duration:3000,
+        });
       }
     );
   }
