@@ -11,6 +11,7 @@
   
    <!-- Login button -->
    <a
+    *ngIf="!login.isLoggedIn()"
    [routerLink]="'/login'"
     mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     Login
@@ -18,10 +19,29 @@
 
    <!-- Register button -->
    <a 
+      *ngIf="!login.isLoggedIn()"
        [routerLink]="'/signup'"
        style="margin-right: 20px; margin-left: 20px;"
        mat-icon-button class="example-icon favorite-icon" 
        aria-label="Example icon-button with heart icon">
     Register
   </a>
+
+  <!-- logout button -->
+  <a 
+  (click)="logout()"
+  *ngIf="login.isLoggedIn()"
+   style="margin-right: 20px; margin-left: 20px;"
+   mat-icon-button class="example-icon favorite-icon" 
+   aria-label="Example icon-button with heart icon">
+LogOut
+</a>
+<!-- Showing current logged in username -->
+<a 
+*ngIf="login.isLoggedIn()"
+ style="margin-right: 20px; margin-left: 20px;"
+ mat-icon-button class="example-icon favorite-icon" 
+ aria-label="Example icon-button with heart icon">
+{{login.getUser().username}}
+</a>
  </mat-toolbar>
