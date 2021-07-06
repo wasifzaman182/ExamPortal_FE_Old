@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './pages/admin/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import {SingupComponent} from './pages/singup/singup.component';
 import { UserDashboardComponent } from './pages/user/user-dashboard/user-dashboard.component';
 import { AdminGuard } from './services/adminGuard/admin.guard';
@@ -31,8 +32,13 @@ const routes: Routes = [
   {
     path:'admin-dashboard',
     component:AdminDashboardComponent,
-    pathMatch:'full',
     canActivate:[AdminGuard],
+    children:[
+      {
+        path:'profile',
+        component:ProfileComponent,
+      },
+    ],
   },
   {
     path:'user-dashboard',
