@@ -1,1 +1,50 @@
-<h1>Profile details</h1>
+<mat-card *ngIf="user">
+    <h1>Profile Details</h1>
+    <!-- {{user|json}} -->
+    <mat-card-content>
+        <div class="bootsrtap-wrapper">
+            
+            <div class="container text-center">
+                <img src="https://st.depositphotos.com/2101611/3925/v/600/depositphotos_39258143-stock-illustration-businessman-avatar-profile-picture.jpg"
+                 alt="" class="profile-image">
+
+                 <h1>Wasif Zaman</h1>
+
+                </div>
+
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-10 offset-md-1 ">
+                        <!-- table detils -->
+                        <table class="table text-center">
+                            <tr>
+                                <td>username</td>
+                                <td>{{user.username}}</td>
+                            </tr>
+                            <tr>
+                                <td>userID</td>
+                                <td>EXAM{{user.id}}</td>
+                            </tr>
+                            <tr>
+                                <td>PhoneNumber</td>
+                                <td>{{user.phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{user.authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{user.enabled? "Active" :"Non Active"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button mat-raised-button color="primary">UPDATE</button>
+        <button mat-raised-button color="accent">SHARE</button>
+      </mat-card-actions>
+</mat-card>
