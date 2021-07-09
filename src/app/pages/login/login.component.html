@@ -4,7 +4,6 @@
         
       </div>
       
-     
        <div class="row mt20" > 
         
         <div class="col-md-6 offset-md-3 ">
@@ -22,25 +21,17 @@
                     <!-- username -->
                      <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >User Name</mat-label>
-                        <input 
-                        
-                        [(ngModel)]="loginData.username"
-                        name="username"
-
-                        required
-                        matInput placeholder="Enter here" />
+                        <input [(ngModel)]="loginData.username"
+                            name="username" required
+                            matInput placeholder="Enter here" />
                         <mat-hint>Valid UserName</mat-hint>
                       </mat-form-field>
                      
                       <!-- Password -->
                       <mat-form-field  class="full-width" appearance="outline">
                         <mat-label >Password</mat-label>
-                        <input 
-                        
-                        [(ngModel)]="loginData.password"
-                        name="password"
-
-                        required
+                        <input [(ngModel)]="loginData.password"
+                        name="password" required
                         type="password"  matInput placeholder="Enter here" />
                       </mat-form-field>
 
@@ -49,11 +40,9 @@
                           <button style="margin-right: 10px;" type="submit" mat-raised-button color="primary">Login</button>
                           <button class="ml10" mat-raised-button color="accent">Clear</button>
                       </div>
-
                 </form>
             </mat-card>
             </div>
-       
         </div>
     </div>
 </div>

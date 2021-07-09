@@ -6,13 +6,14 @@
       aria-label="Example icon-button with menu icon">
      <mat-icon>menu_book</mat-icon>
    </a>
+
    <span>Exam Portal</span>
    <span class="example-spacer"></span>
   
    <!-- Login button -->
    <a
     *ngIf="!login.isLoggedIn()"
-   [routerLink]="'/login'"
+     [routerLink]="'/login'"
     mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     Login
    </a>
@@ -28,21 +29,21 @@
   </a>
 
   <!-- logout button -->
-  <a 
-  (click)="logout()"
-  *ngIf="login.isLoggedIn()"
-   style="margin-right: 20px; margin-left: 20px;"
-   mat-icon-button class="example-icon favorite-icon" 
-   aria-label="Example icon-button with heart icon">
-LogOut
+    <a 
+    (click)="logout()"
+    *ngIf="login.isLoggedIn()"
+    style="margin-right: 20px; margin-left: 20px;"
+    mat-icon-button class="example-icon favorite-icon" 
+    aria-label="Example icon-button with heart icon">
+   LogOut
 </a>
 <!-- Showing current logged in username -->
-<a 
-*ngIf="login.isLoggedIn()"
- style="margin-right: 20px; margin-left: 20px;"
- routerLink="/admin-dashboard/profile"
- mat-icon-button class="example-icon favorite-icon" 
- aria-label="Example icon-button with heart icon">
+  <a 
+  *ngIf="login.isLoggedIn()"
+  style="margin-right: 20px; margin-left: 20px;"
+  routerLink="/admin-dashboard/profile"
+  mat-icon-button class="example-icon favorite-icon" 
+  aria-label="Example icon-button with heart icon">
 {{login.getUser().username}}
 </a>
  </mat-toolbar>
